@@ -10,6 +10,11 @@
 		30AEF4DA1FAB123C00C57F87 /* FormattedDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AEF4D01FAB123B00C57F87 /* FormattedDataSource.framework */; };
 		30AEF4DF1FAB123C00C57F87 /* FormattedDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AEF4DE1FAB123C00C57F87 /* FormattedDataSourceTests.swift */; };
 		30AEF4E11FAB123C00C57F87 /* FormattedDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 30AEF4D31FAB123B00C57F87 /* FormattedDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30C5F5261FAB1636003711D1 /* FormattedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F5251FAB1636003711D1 /* FormattedDataSource.swift */; };
+		30C5F5311FAB2E88003711D1 /* CellControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F5301FAB2E88003711D1 /* CellControllerProtocol.swift */; };
+		30C5F5331FAB2F45003711D1 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F5321FAB2F45003711D1 /* ReusableView.swift */; };
+		30C5F5351FAB48A2003711D1 /* BaseCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F5341FAB48A2003711D1 /* BaseCellController.swift */; };
+		30C5F5371FAB4B59003711D1 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C5F5361FAB4B59003711D1 /* ContainerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		30AEF4D91FAB123C00C57F87 /* FormattedDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormattedDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30AEF4DE1FAB123C00C57F87 /* FormattedDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDataSourceTests.swift; sourceTree = "<group>"; };
 		30AEF4E01FAB123C00C57F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C5F5251FAB1636003711D1 /* FormattedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDataSource.swift; sourceTree = "<group>"; };
+		30C5F5301FAB2E88003711D1 /* CellControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellControllerProtocol.swift; sourceTree = "<group>"; };
+		30C5F5321FAB2F45003711D1 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		30C5F5341FAB48A2003711D1 /* BaseCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellController.swift; sourceTree = "<group>"; };
+		30C5F5361FAB4B59003711D1 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 				30AEF4D21FAB123B00C57F87 /* FormattedDataSource */,
 				30AEF4DD1FAB123C00C57F87 /* FormattedDataSourceTests */,
 				30AEF4D11FAB123B00C57F87 /* Products */,
+				30AEF5081FAB15BB00C57F87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +82,7 @@
 		30AEF4D21FAB123B00C57F87 /* FormattedDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				30C5F5241FAB161B003711D1 /* Source */,
 				30AEF4D31FAB123B00C57F87 /* FormattedDataSource.h */,
 				30AEF4D41FAB123B00C57F87 /* Info.plist */,
 			);
@@ -84,6 +96,25 @@
 				30AEF4E01FAB123C00C57F87 /* Info.plist */,
 			);
 			path = FormattedDataSourceTests;
+			sourceTree = "<group>";
+		};
+		30AEF5081FAB15BB00C57F87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30C5F5241FAB161B003711D1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				30C5F5251FAB1636003711D1 /* FormattedDataSource.swift */,
+				30C5F5301FAB2E88003711D1 /* CellControllerProtocol.swift */,
+				30C5F5321FAB2F45003711D1 /* ReusableView.swift */,
+				30C5F5341FAB48A2003711D1 /* BaseCellController.swift */,
+				30C5F5361FAB4B59003711D1 /* ContainerTableViewCell.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +179,7 @@
 				TargetAttributes = {
 					30AEF4CF1FAB123B00C57F87 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					30AEF4D81FAB123C00C57F87 = {
@@ -196,6 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C5F5371FAB4B59003711D1 /* ContainerTableViewCell.swift in Sources */,
+				30C5F5331FAB2F45003711D1 /* ReusableView.swift in Sources */,
+				30C5F5261FAB1636003711D1 /* FormattedDataSource.swift in Sources */,
+				30C5F5351FAB48A2003711D1 /* BaseCellController.swift in Sources */,
+				30C5F5311FAB2E88003711D1 /* CellControllerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +371,7 @@
 		30AEF4E51FAB123C00C57F87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -343,10 +381,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FormattedDataSource/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Brander.FormattedDataSource;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +395,7 @@
 		30AEF4E61FAB123C00C57F87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -364,6 +405,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FormattedDataSource/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Brander.FormattedDataSource;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -376,6 +418,7 @@
 		30AEF4E81FAB123C00C57F87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87GS5B9N5U;
 				INFOPLIST_FILE = FormattedDataSourceTests/Info.plist;
@@ -390,6 +433,7 @@
 		30AEF4E91FAB123C00C57F87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87GS5B9N5U;
 				INFOPLIST_FILE = FormattedDataSourceTests/Info.plist;
