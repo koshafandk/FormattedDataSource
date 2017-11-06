@@ -10,4 +10,8 @@ import Foundation
 
 public class ContentController: ContentControllerProtocol {
   public var view: UIView?
+  
+  public init(view: UIView? = nil) {
+    self.view = view
+  }
 }

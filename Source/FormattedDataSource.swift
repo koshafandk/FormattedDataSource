@@ -9,31 +9,33 @@
 import Foundation
 
 public class FormattedSection {
-  var format: String?
-  var mainDataSourceArray: [CellControllerProtocol]?
-  var supportElemets = [Character: CellControllerProtocol]()
+  public var format: String?
+  public var mainDataSourceArray: [CellControllerProtocol]?
+  public var supportElemets = [Character: SupportCellControllerProtocol]()
+  
+  public init() {}
 }
 
 public class FormattedDataSource: NSObject {
-  var formattedSections = [FormattedSection]()
+  public var formattedSections = [FormattedSection]()
   
-  public override init() {
-  }
+  public override init() {}
 }
 
-// MARK: - UITableViewDataSource
-extension FormattedDataSource: UITableViewDataSource {
-  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    let cell = ContainerTableViewCell()
-    return cell
+// MARK: - UICollectionViewDataSource
+extension FormattedDataSource: UICollectionViewDataSource {
+  public func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return formattedSections.count
   }
   
-  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return formattedSections[section].mainDataSourceArray?.count ?? 0
   }
   
-  public func numberOfSections(in tableView: UITableView) -> Int {
-    return formattedSections.count
+  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ContainerCollectionViewCell
+    let contentView = formattedSections[indexPath.section].mainDataSourceArray?[indexPath.row].contentController?.view
+    cell.configure(view: contentView)
+    return cell
   }
 }
