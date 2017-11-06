@@ -1,5 +1,5 @@
 //
-//  SupportCellControllerProtocol.swift
+//  CellControllerFactoryProtocol.swift
 //  FormattedDataSource
 //
 //  Created by BRANDERSTUDIO on 06.11.2017.
@@ -8,5 +8,6 @@
 
 import Foundation
 
-public protocol SupportCellControllerProtocol: NSCopying, CellControllerProtocol {
+public protocol CellControllerFactoryProtocol {
+  func cellController() -> CellControllerProtocol
 }

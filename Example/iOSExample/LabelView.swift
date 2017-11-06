@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class LabelView: UIView {
   let label = UILabel()
@@ -28,6 +29,8 @@ private extension LabelView {
   
   func setupLabel() {
     addSubview(label)
-    label.frame = CGRect(x: 5, y: 5, width: 200, height: 20)
+    label.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 }

@@ -11,7 +11,7 @@ import Foundation
 public class FormattedSection {
   public var format: String?
   public var mainDataSourceArray: [CellControllerProtocol]?
-  public var supportElemets = [Character: SupportCellControllerProtocol]()
+  public var supportElemets = [Character: CellControllerFactoryProtocol]()
   
   public init() {}
 }
@@ -33,9 +33,16 @@ extension FormattedDataSource: UICollectionViewDataSource {
   }
   
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let formattedSection = formattedSections[indexPath.section]
+    let char = formattedSection.format?.character(at: indexPath.row)
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ContainerCollectionViewCell
-    let contentView = formattedSections[indexPath.section].mainDataSourceArray?[indexPath.row].contentController?.view
-    cell.configure(view: contentView)
+    if char == "*" {
+      let contentView = formattedSection.mainDataSourceArray?[indexPath.row].contentController?.view
+      cell.configure(view: contentView)
+    } else {
+      let controller = formattedSection.supportElemets[char!]?.cellController()
+      cell.configure(view: controller?.contentController?.view)
+    }
     return cell
   }
 }
