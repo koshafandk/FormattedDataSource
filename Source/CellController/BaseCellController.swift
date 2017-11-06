@@ -9,10 +9,10 @@
 import Foundation
 
 public class BaseCellController: CellControllerProtocol {
+  public var contentController: ContentControllerProtocol?
+  
   public init() {
   }
-  
-  public var view: UIView?
   
   public func didSelect() {
   }

@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol CellControllerProtocol {
-  var view: UIView? { set get }
+  var contentController: ContentControllerProtocol? { get set }
   func didSelect()
 }
