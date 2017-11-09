@@ -14,8 +14,33 @@ struct FormattedSectionConstants {
 
 public class FormattedSection {
   public var format: String?
-  public var mainDataSourceArray: [CellControllerProtocol]?
+  public var mainElements: [CellControllerProtocol]?
   public var supportElemets = [Character: [CellControllerProtocol]]()
+  public var lastElement: CellControllerProtocol?
+  var numberOfItems: Int = 0
   
   public init() {}
+  
+  func recalculateNumberOfItems() {
+    numberOfItems = calculateNumberOfItems()
+  }
+  
+  func calculateNumberOfItems() -> Int {
+    guard let format = format else { return mainElements?.count ?? 0 }
+    let indexes = format.indexes(of: FormattedSectionConstants.mainSourceSymbol)
+    let indexesCount = indexes.count
+    var multiplier = 0
+    var offset = 0
+    
+    if let mainArrayCount = mainElements?.count,
+      mainArrayCount > 0,
+      indexesCount > 0 {
+      multiplier = mainArrayCount / indexesCount
+      offset = mainArrayCount % indexesCount
+    }
+    if lastElement != nil {
+      offset += 1
+    }
+    return format.count * multiplier + offset
+  }
 }

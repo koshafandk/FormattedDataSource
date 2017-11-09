@@ -45,13 +45,13 @@ class ViewController: UIViewController {
   }
   
   @objc func actionTapOnRemoveButton() {
-    dataSource.formattedSections[0].mainDataSourceArray?.removeFirst()
+    dataSource.formattedSections[0].mainElements?.removeFirst()
     collectionView.reloadData()
   }
   
   @objc func actionTapOnAddButton() {
-    let controller = CellControllersFactory.labelCellController(text: "text5")
-    dataSource.formattedSections[0].mainDataSourceArray?.append(controller)
+    let controller = CellControllersFactory.labelCellControllerBlue(text: "text5")
+    dataSource.formattedSections[0].mainElements?.append(controller)
     collectionView.reloadData()
   }
 }
@@ -75,40 +75,56 @@ private extension ViewController {
   
   func setupDataSource() {
     let formattedSection = FormattedSection()
-    var mainArray = [
-      CellControllersFactory.labelCellController(text: "text1"),
-      CellControllersFactory.labelCellController(text: "text2"),
-      CellControllersFactory.labelCellController(text: "text3"),
-      CellControllersFactory.labelCellController(text: "text4"),
-      CellControllersFactory.labelCellController(text: "text5"),
-      CellControllersFactory.labelCellController(text: "text6"),
-      CellControllersFactory.labelCellController(text: "text7"),
-      CellControllersFactory.labelCellController(text: "text8"),
-      CellControllersFactory.labelCellController(text: "text9")]
+    let mainBlueCells = [
+      CellControllersFactory.labelCellControllerBlue(text: "text1"),
+      CellControllersFactory.labelCellControllerBlue(text: "text2"),
+      CellControllersFactory.labelCellControllerBlue(text: "text3"),
+      CellControllersFactory.labelCellControllerBlue(text: "text4"),
+      CellControllersFactory.labelCellControllerBlue(text: "text5"),
+      CellControllersFactory.labelCellControllerBlue(text: "text6"),
+      CellControllersFactory.labelCellControllerBlue(text: "text7"),
+      CellControllersFactory.labelCellControllerBlue(text: "text8"),
+      CellControllersFactory.labelCellControllerBlue(text: "text9")]
     
-    let dividers = [
-      CellControllersFactory.labelCellController2(text: "text1"),
-      CellControllersFactory.labelCellController2(text: "text2"),
-      CellControllersFactory.labelCellController2(text: "text3"),
-      CellControllersFactory.labelCellController2(text: "text4"),
-      CellControllersFactory.labelCellController2(text: "text5"),
-      CellControllersFactory.labelCellController2(text: "text6"),
-      CellControllersFactory.labelCellController2(text: "text7"),
-      CellControllersFactory.labelCellController2(text: "text8"),
-      CellControllersFactory.labelCellController2(text: "text9")]
+    let redCells = [
+      CellControllersFactory.labelCellControllerRed(text: "text1"),
+      CellControllersFactory.labelCellControllerRed(text: "text2"),
+      CellControllersFactory.labelCellControllerRed(text: "text3"),
+      CellControllersFactory.labelCellControllerRed(text: "text4"),
+      CellControllersFactory.labelCellControllerRed(text: "text5"),
+      CellControllersFactory.labelCellControllerRed(text: "text6"),
+      CellControllersFactory.labelCellControllerRed(text: "text7"),
+      CellControllersFactory.labelCellControllerRed(text: "text8"),
+      CellControllersFactory.labelCellControllerRed(text: "text9")]
     
-    let bottomDividers = [
-      CellControllersFactory.labelCellController3(text: "text1"),
-      CellControllersFactory.labelCellController3(text: "text2"),
-      CellControllersFactory.labelCellController3(text: "text3"),
-      CellControllersFactory.labelCellController3(text: "text4")
+    let browmCells = [
+      CellControllersFactory.labelCellControllerBrown(text: "text1"),
+      CellControllersFactory.labelCellControllerBrown(text: "text2"),
+      CellControllersFactory.labelCellControllerBrown(text: "text3"),
+      CellControllersFactory.labelCellControllerBrown(text: "text4")
     ]
     
+    let mainBlueCells2 = [
+      CellControllersFactory.labelCellControllerBlue(text: "text1"),
+      CellControllersFactory.labelCellControllerBlue(text: "text2"),
+      CellControllersFactory.labelCellControllerBlue(text: "text3"),
+      CellControllersFactory.labelCellControllerBlue(text: "text4"),
+      CellControllersFactory.labelCellControllerBlue(text: "text5"),
+      CellControllersFactory.labelCellControllerBlue(text: "text6"),
+      CellControllersFactory.labelCellControllerBlue(text: "text7"),
+      CellControllersFactory.labelCellControllerBlue(text: "text8"),
+      CellControllersFactory.labelCellControllerBlue(text: "text9")]
+    
     formattedSection.format = "*|*|*_"
-    formattedSection.mainDataSourceArray = mainArray
-    formattedSection.supportElemets["|"] = dividers
-    formattedSection.supportElemets["_"] = bottomDividers
-    dataSource.formattedSections = [formattedSection]
+    formattedSection.mainElements = mainBlueCells
+    formattedSection.supportElemets["|"] = redCells
+    formattedSection.supportElemets["_"] = browmCells
+    formattedSection.lastElement = CellControllersFactory.labelCellControllerGray(text: "text")
+    
+    let formattedSection2 = FormattedSection()
+    formattedSection2.mainElements = mainBlueCells2
+    
+    dataSource.formattedSections = [formattedSection, formattedSection2]
     
     collectionView.reloadData()
   }

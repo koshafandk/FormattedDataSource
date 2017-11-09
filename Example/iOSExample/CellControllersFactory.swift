@@ -10,30 +10,28 @@ import UIKit
 import FormattedDataSource
 
 class CellControllersFactory {
-  static func labelCellController(text: String? = nil) -> BaseCellController {
+  private static func labelCellController(text: String? = nil, backgroundColor: UIColor) -> BaseCellController {
     let view = LabelView()
     view.label.text = text
-    view.backgroundColor = UIColor.blue
+    view.backgroundColor = backgroundColor
     let controller = BaseCellController()
     controller.contentController = ContentController(view: view)
     return controller
   }
   
-  static func labelCellController2(text: String? = nil) -> BaseCellController {
-    let view = LabelView()
-    view.label.text = text
-    view.backgroundColor = UIColor.red
-    let controller = BaseCellController()
-    controller.contentController = ContentController(view: view)
-    return controller
+  static func labelCellControllerBlue(text: String? = nil) -> BaseCellController {
+    return labelCellController(text: text, backgroundColor: UIColor.blue)
   }
   
-  static func labelCellController3(text: String? = nil) -> BaseCellController {
-    let view = LabelView()
-    view.label.text = text
-    view.backgroundColor = UIColor.brown
-    let controller = BaseCellController()
-    controller.contentController = ContentController(view: view)
-    return controller
+  static func labelCellControllerRed(text: String? = nil) -> BaseCellController {
+    return labelCellController(text: text, backgroundColor: UIColor.red)
+  }
+  
+  static func labelCellControllerBrown(text: String? = nil) -> BaseCellController {
+    return labelCellController(text: text, backgroundColor: UIColor.brown)
+  }
+  
+  static func labelCellControllerGray(text: String? = nil) -> BaseCellController {
+    return labelCellController(text: text, backgroundColor: UIColor.gray)
   }
 }
