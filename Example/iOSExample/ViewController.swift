@@ -12,7 +12,7 @@ import FormattedDataSource
 class ViewController: UIViewController {
   let collectionLayout = UICollectionViewFlowLayout()
   var collectionView: UICollectionView
-  let dataSource = FormattedDataSource()
+  let dataSource = CollectionFormattedDataSource()
   
   let removeButton = UIButton(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 40, width: 100, height: 40))
   let addButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 100, y: UIScreen.main.bounds.height - 40, width: 100, height: 40))
@@ -32,7 +32,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     initConfigure()
-    removeButton.addTarget(self, action: #selector(actionTapOnButton), for: .touchUpInside)
+    
+    removeButton.addTarget(self, action: #selector(actionTapOnRemoveButton), for: .touchUpInside)
     removeButton.setTitle("Remove", for: .normal)
     removeButton.backgroundColor = UIColor.red
     view.addSubview(removeButton)
@@ -43,25 +44,17 @@ class ViewController: UIViewController {
     view.addSubview(addButton)
   }
   
-  @objc func actionTapOnButton() {
+  @objc func actionTapOnRemoveButton() {
     dataSource.formattedSections[0].mainDataSourceArray?.removeFirst()
-    collectionView.deleteItems(at: [IndexPath(row: 0, section: 0)])
+    collectionView.reloadData()
   }
   
   @objc func actionTapOnAddButton() {
     let controller = CellControllersFactory.labelCellController(text: "text5")
     dataSource.formattedSections[0].mainDataSourceArray?.append(controller)
-    collectionView.insertItems(at: [IndexPath(row: (dataSource.formattedSections[0].mainDataSourceArray?.count)! - 1, section: 0)])
+    collectionView.reloadData()
   }
 }
-//
-//extension ViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//  func collectionView(_ collectionView: UICollectionView,
-//                      layout collectionViewLayout: UICollectionViewLayout,
-//                      sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    return CGSize(width: 100, height: 100)
-//  }
-//}
 
 // MARK: - Init configure
 private extension ViewController {
@@ -71,8 +64,9 @@ private extension ViewController {
   }
   
   func configureCollectionView() {
-    collectionView.register(ContainerCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-    collectionLayout.estimatedItemSize = CGSize(width: 100, height: 100)
+    collectionView.register(ContainerCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionContainerCell")
+    
+    collectionLayout.estimatedItemSize = CGSize(width: 50, height: 50)
     view.addSubview(collectionView)
     collectionView.backgroundColor = UIColor.white
     collectionView.dataSource = dataSource
@@ -81,42 +75,41 @@ private extension ViewController {
   
   func setupDataSource() {
     let formattedSection = FormattedSection()
-    formattedSection.mainDataSourceArray = [
+    var mainArray = [
       CellControllersFactory.labelCellController(text: "text1"),
       CellControllersFactory.labelCellController(text: "text2"),
       CellControllersFactory.labelCellController(text: "text3"),
       CellControllersFactory.labelCellController(text: "text4"),
-      CellControllersFactory.labelCellController(text: "text5")]
+      CellControllersFactory.labelCellController(text: "text5"),
+      CellControllersFactory.labelCellController(text: "text6"),
+      CellControllersFactory.labelCellController(text: "text7"),
+      CellControllersFactory.labelCellController(text: "text8"),
+      CellControllersFactory.labelCellController(text: "text9")]
     
-    formattedSection.format = "*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|"
-    let dividerFactory = DividerControllerFactory()
-    formattedSection.supportElemets["|"] = dividerFactory
-    dataSource.formattedSections.append(formattedSection)
+    let dividers = [
+      CellControllersFactory.labelCellController2(text: "text1"),
+      CellControllersFactory.labelCellController2(text: "text2"),
+      CellControllersFactory.labelCellController2(text: "text3"),
+      CellControllersFactory.labelCellController2(text: "text4"),
+      CellControllersFactory.labelCellController2(text: "text5"),
+      CellControllersFactory.labelCellController2(text: "text6"),
+      CellControllersFactory.labelCellController2(text: "text7"),
+      CellControllersFactory.labelCellController2(text: "text8"),
+      CellControllersFactory.labelCellController2(text: "text9")]
+    
+    let bottomDividers = [
+      CellControllersFactory.labelCellController3(text: "text1"),
+      CellControllersFactory.labelCellController3(text: "text2"),
+      CellControllersFactory.labelCellController3(text: "text3"),
+      CellControllersFactory.labelCellController3(text: "text4")
+    ]
+    
+    formattedSection.format = "*|*|*_"
+    formattedSection.mainDataSourceArray = mainArray
+    formattedSection.supportElemets["|"] = dividers
+    formattedSection.supportElemets["_"] = bottomDividers
+    dataSource.formattedSections = [formattedSection]
+    
     collectionView.reloadData()
-  }
-}
-
-class CellControllersFactory {
-  static func labelCellController(text: String? = nil) -> BaseCellController {
-    let view = LabelView()
-    view.label.text = text
-    view.backgroundColor = UIColor.blue
-    let controller = BaseCellController()
-    controller.contentController = ContentController(view: view)
-    return controller
-  }
-  
-  static func dividerCellController() -> BaseCellController {
-    let view = UIView()
-    view.backgroundColor = UIColor.darkText
-    let controller = BaseCellController()
-    controller.contentController = ContentController(view: view)
-    return controller
-  }
-}
-
-class DividerControllerFactory: CellControllerFactoryProtocol {
-  func cellController() -> CellControllerProtocol {
-    return CellControllersFactory.dividerCellController()
   }
 }

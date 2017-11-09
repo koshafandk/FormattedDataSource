@@ -13,4 +13,14 @@ extension String {
     let charIndex = index(startIndex, offsetBy: position)
     return self[charIndex]
   }
+  
+  func indexes(of char: Character) -> [Int] {
+    var charIndexes = [Int]()
+    for i in 0..<count {
+      if character(at: i) == char {
+        charIndexes.append(i)
+      }
+    }
+    return charIndexes
+  }
 }

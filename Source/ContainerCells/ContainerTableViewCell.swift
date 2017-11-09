@@ -9,8 +9,8 @@
 import Foundation
 import SnapKit
 
-public class ContainerTableViewCell: UITableViewCell {
-  func configure(view: UIView?) {
+public class ContainerTableViewCell: UITableViewCell, ContainerCellProtocol {
+  func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)
     view.snp.makeConstraints { make in

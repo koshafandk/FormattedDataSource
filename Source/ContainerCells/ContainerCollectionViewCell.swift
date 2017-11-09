@@ -9,8 +9,8 @@
 import UIKit
 import SnapKit
 
-public class ContainerCollectionViewCell: UICollectionViewCell {
-  func configure(view: UIView?) {
+public class ContainerCollectionViewCell: UICollectionViewCell, ContainerCellProtocol {
+  func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)
     view.snp.makeConstraints { make in

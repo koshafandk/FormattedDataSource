@@ -32,5 +32,10 @@ private extension LabelView {
     label.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+    label.textColor = UIColor.white
+    label.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+    label.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .vertical)
+    label.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+    label.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .vertical)
   }
 }

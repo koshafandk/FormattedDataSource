@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30201A2A1FB0AF5D00959C52 /* FormattedDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308119A41FB0589C00EEA5A8 /* FormattedDataSource.framework */; };
+		30201A2B1FB0AF5D00959C52 /* FormattedDataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 308119A41FB0589C00EEA5A8 /* FormattedDataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		305246BB1FB0631800BB63CA /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305246BA1FB0631800BB63CA /* LabelView.swift */; };
 		308119A81FB0590800EEA5A8 /* FormattedDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308119A91FB0590800EEA5A8 /* FormattedDataSource.framework */; };
 		30BBFEDE1FACDB06003971AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBFEDD1FACDB06003971AF /* AppDelegate.swift */; };
@@ -14,8 +16,23 @@
 		30BBFEE31FACDB06003971AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BBFEE11FACDB06003971AF /* Main.storyboard */; };
 		30BBFEE51FACDB06003971AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BBFEE41FACDB06003971AF /* Assets.xcassets */; };
 		30BBFEE81FACDB06003971AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BBFEE61FACDB06003971AF /* LaunchScreen.storyboard */; };
+		30E6E9421FB3320300549D84 /* CellControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6E9411FB3320300549D84 /* CellControllersFactory.swift */; };
 		7EBBAE92D6213423A0943FA5 /* Pods_iOSExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B4F0D7C45DDCA1212E8573 /* Pods_iOSExample.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30201A2C1FB0AF5D00959C52 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				30201A2B1FB0AF5D00959C52 /* FormattedDataSource.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		305246BA1FB0631800BB63CA /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
@@ -28,6 +45,7 @@
 		30BBFEE41FACDB06003971AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30BBFEE71FACDB06003971AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30BBFEE91FACDB06003971AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30E6E9411FB3320300549D84 /* CellControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellControllersFactory.swift; sourceTree = "<group>"; };
 		83B4F0D7C45DDCA1212E8573 /* Pods_iOSExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB57F405D9224E7309E295 /* Pods-iOSExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSExample.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSExample/Pods-iOSExample.debug.xcconfig"; sourceTree = "<group>"; };
 		D64987135EDE5792294D6C02 /* Pods-iOSExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSExample.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSExample/Pods-iOSExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30201A2A1FB0AF5D00959C52 /* FormattedDataSource.framework in Frameworks */,
 				308119A81FB0590800EEA5A8 /* FormattedDataSource.framework in Frameworks */,
 				7EBBAE92D6213423A0943FA5 /* Pods_iOSExample.framework in Frameworks */,
 			);
@@ -84,6 +103,7 @@
 				30BBFEE61FACDB06003971AF /* LaunchScreen.storyboard */,
 				30BBFEE91FACDB06003971AF /* Info.plist */,
 				305246BA1FB0631800BB63CA /* LabelView.swift */,
+				30E6E9411FB3320300549D84 /* CellControllersFactory.swift */,
 			);
 			path = iOSExample;
 			sourceTree = "<group>";
@@ -110,6 +130,7 @@
 				30BBFED81FACDB06003971AF /* Resources */,
 				DAB88DF463771550FA602107 /* [CP] Embed Pods Frameworks */,
 				4EBC1596EDFC0F2865A8B215 /* [CP] Copy Pods Resources */,
+				30201A2C1FB0AF5D00959C52 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +249,7 @@
 			files = (
 				30BBFEE01FACDB06003971AF /* ViewController.swift in Sources */,
 				30BBFEDE1FACDB06003971AF /* AppDelegate.swift in Sources */,
+				30E6E9421FB3320300549D84 /* CellControllersFactory.swift in Sources */,
 				305246BB1FB0631800BB63CA /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
