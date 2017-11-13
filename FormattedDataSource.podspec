@@ -15,4 +15,5 @@ This framework provide to use multiple dataSource for collection of table view
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'Source/**/*'
+  s.dependency 'SnapKit', '~> 4.0.0'
 end
