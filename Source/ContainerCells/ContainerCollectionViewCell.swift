@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 public class ContainerCollectionViewCell: UICollectionViewCell, ContainerCellProtocol {
+  static let identifier = "CollectionContainerCell"
+  
   func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)

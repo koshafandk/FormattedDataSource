@@ -20,7 +20,7 @@ public class TableFormattedDataSource: BaseFormattedDataSource, UITableViewDataS
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(
-      withIdentifier: GlobalConstants.CellIdentifiers.tableCell, for: indexPath)
+      withIdentifier: ContainerTableViewCell.identifier, for: indexPath)
     guard let containerCell = cell as? ContainerCellProtocol else {
       preconditionFailure("Cell must implement ContainerCellProtocol")
     }

@@ -10,6 +10,8 @@ import Foundation
 import SnapKit
 
 public class ContainerTableViewCell: UITableViewCell, ContainerCellProtocol {
+  static let identifier = "TableContainerCell"
+  
   func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)

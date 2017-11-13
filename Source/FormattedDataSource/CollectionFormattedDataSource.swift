@@ -20,7 +20,7 @@ public class CollectionFormattedDataSource: BaseFormattedDataSource, UICollectio
   
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: GlobalConstants.CellIdentifiers.collectionCell,
+      withReuseIdentifier: ContainerCollectionViewCell.identifier,
       for: indexPath)
     guard let containerCell = cell as? ContainerCellProtocol else {
       preconditionFailure("Cell must implement ContainerCellProtocol")
