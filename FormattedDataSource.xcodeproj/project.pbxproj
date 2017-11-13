@@ -12,6 +12,8 @@
 		30398C1C1FB9B61B00279FEF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 30398C1B1FB9B61B00279FEF /* README.md */; };
 		30398C1F1FB9B62C00279FEF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 30398C1D1FB9B62B00279FEF /* LICENSE */; };
 		30398C201FB9B62C00279FEF /* FormattedDataSource.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 30398C1E1FB9B62B00279FEF /* FormattedDataSource.podspec */; };
+		30398C271FB9BF3500279FEF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30398C251FB9BF3400279FEF /* Info.plist */; };
+		30398C281FB9BF3500279FEF /* FormattedDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 30398C261FB9BF3500279FEF /* FormattedDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305246B31FB05D1A00BB63CA /* CollectionFormattedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305246A91FB05D1A00BB63CA /* CollectionFormattedDataSource.swift */; };
 		305246B41FB05D1A00BB63CA /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305246AB1FB05D1A00BB63CA /* ContentController.swift */; };
 		305246B51FB05D1A00BB63CA /* ContentControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305246AC1FB05D1A00BB63CA /* ContentControllerProtocol.swift */; };
@@ -20,7 +22,6 @@
 		305246B81FB05D1A00BB63CA /* BaseCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305246B01FB05D1A00BB63CA /* BaseCellController.swift */; };
 		30BBFEA31FACDAAF003971AF /* FormattedDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBFE991FACDAAE003971AF /* FormattedDataSource.framework */; };
 		30BBFEA81FACDAAF003971AF /* FormattedDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BBFEA71FACDAAF003971AF /* FormattedDataSourceTests.swift */; };
-		30BBFEAA1FACDAAF003971AF /* FormattedDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBFE9C1FACDAAE003971AF /* FormattedDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30E6E9371FB31C8B00549D84 /* ContainerCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6E9361FB31C8B00549D84 /* ContainerCellProtocol.swift */; };
 		30E6E93A1FB32C0600549D84 /* FormattedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6E9391FB32C0600549D84 /* FormattedSection.swift */; };
 		30E6E93C1FB32C4700549D84 /* TableFormattedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6E93B1FB32C4700549D84 /* TableFormattedDataSource.swift */; };
@@ -45,6 +46,8 @@
 		30398C1B1FB9B61B00279FEF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		30398C1D1FB9B62B00279FEF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		30398C1E1FB9B62B00279FEF /* FormattedDataSource.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FormattedDataSource.podspec; sourceTree = SOURCE_ROOT; };
+		30398C251FB9BF3400279FEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30398C261FB9BF3500279FEF /* FormattedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedDataSource.h; sourceTree = "<group>"; };
 		305246A91FB05D1A00BB63CA /* CollectionFormattedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionFormattedDataSource.swift; sourceTree = "<group>"; };
 		305246AB1FB05D1A00BB63CA /* ContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		305246AC1FB05D1A00BB63CA /* ContentControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentControllerProtocol.swift; sourceTree = "<group>"; };
@@ -52,8 +55,6 @@
 		305246AF1FB05D1A00BB63CA /* CellControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellControllerProtocol.swift; sourceTree = "<group>"; };
 		305246B01FB05D1A00BB63CA /* BaseCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCellController.swift; sourceTree = "<group>"; };
 		30BBFE991FACDAAE003971AF /* FormattedDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormattedDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30BBFE9C1FACDAAE003971AF /* FormattedDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormattedDataSource.h; sourceTree = "<group>"; };
-		30BBFE9D1FACDAAE003971AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30BBFEA21FACDAAF003971AF /* FormattedDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormattedDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BBFEA71FACDAAF003971AF /* FormattedDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDataSourceTests.swift; sourceTree = "<group>"; };
 		30BBFEA91FACDAAF003971AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				30BBFE9B1FACDAAE003971AF /* FormattedDataSource */,
+				30398C261FB9BF3500279FEF /* FormattedDataSource.h */,
+				30398C251FB9BF3400279FEF /* Info.plist */,
 				30BBFEA61FACDAAF003971AF /* FormattedDataSourceTests */,
 				30BBFE9A1FACDAAE003971AF /* Products */,
 				3081199C1FB0586000EEA5A8 /* Frameworks */,
@@ -184,10 +187,8 @@
 				30398C1A1FB9B5EE00279FEF /* Deployment */,
 				30398C191FB9B5E500279FEF /* Documentation */,
 				305246A81FB05D1A00BB63CA /* Source */,
-				30BBFE9C1FACDAAE003971AF /* FormattedDataSource.h */,
-				30BBFE9D1FACDAAE003971AF /* Info.plist */,
 			);
-			path = FormattedDataSource;
+			name = FormattedDataSource;
 			sourceTree = "<group>";
 		};
 		30BBFEA61FACDAAF003971AF /* FormattedDataSourceTests */ = {
@@ -229,7 +230,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BBFEAA1FACDAAF003971AF /* FormattedDataSource.h in Headers */,
+				30398C281FB9BF3500279FEF /* FormattedDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30398C271FB9BF3500279FEF /* Info.plist in Resources */,
 				30398C1F1FB9B62C00279FEF /* LICENSE in Resources */,
 				30398C201FB9B62C00279FEF /* FormattedDataSource.podspec in Resources */,
 				30398C1C1FB9B61B00279FEF /* README.md in Resources */,
@@ -533,7 +535,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FormattedDataSource/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -558,7 +560,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FormattedDataSource/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
