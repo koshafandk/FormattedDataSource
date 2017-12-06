@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class CollectionFormattedDataSource: BaseFormattedDataSource, UICollectionViewDataSource {
+open class CollectionFormattedDataSource: BaseFormattedDataSource, UICollectionViewDataSource {
   // MARK: - UICollectionViewDataSource
-  public func numberOfSections(in collectionView: UICollectionView) -> Int {
+  open func numberOfSections(in collectionView: UICollectionView) -> Int {
     return super.numberOfSections()
   }
   
-  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return super.numberOfItemsInSection(section)
   }
   
-  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(
       withReuseIdentifier: ContainerCollectionViewCell.identifier,
       for: indexPath)

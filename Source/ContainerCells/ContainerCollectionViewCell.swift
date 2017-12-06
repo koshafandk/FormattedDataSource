@@ -9,10 +9,10 @@
 import UIKit
 import SnapKit
 
-public class ContainerCollectionViewCell: UICollectionViewCell, ContainerCellProtocol {
+open class ContainerCollectionViewCell: UICollectionViewCell, ContainerCellProtocol {
   static let identifier = "CollectionContainerCell"
   
-  func configure(with view: UIView?) {
+  open func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)
     view.snp.makeConstraints { make in

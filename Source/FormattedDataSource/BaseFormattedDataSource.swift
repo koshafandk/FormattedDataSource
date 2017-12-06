@@ -8,22 +8,22 @@
 
 import Foundation
 
-public class BaseFormattedDataSource: NSObject {
-  public var formattedSections = [FormattedSection]()
+open class BaseFormattedDataSource: NSObject {
+  open var formattedSections = [FormattedSection]()
   
   public override init() {}
   
-  func numberOfSections() -> Int {
+  open func numberOfSections() -> Int {
     return formattedSections.count
   }
   
-  func numberOfItemsInSection(_ section: Int) -> Int {
+  open func numberOfItemsInSection(_ section: Int) -> Int {
     let formattedSection = formattedSections[section]
     formattedSection.recalculateNumberOfItems()
     return formattedSection.numberOfItems
   }
   
-  func configureCell(_ section: FormattedSection,
+  open func configureCell(_ section: FormattedSection,
                      _ cell: ContainerCellProtocol,
                      _ indexPath: IndexPath) {
     guard let format = section.format else {

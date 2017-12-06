@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class TableFormattedDataSource: BaseFormattedDataSource, UITableViewDataSource {
+open class TableFormattedDataSource: BaseFormattedDataSource, UITableViewDataSource {
   // MARK: - UITableViewDataSource
-  public func numberOfSections(in tableView: UITableView) -> Int {
+  open func numberOfSections(in tableView: UITableView) -> Int {
     return super.numberOfSections()
   }
   
-  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return numberOfItemsInSection(section)
   }
   
-  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(
       withIdentifier: ContainerTableViewCell.identifier, for: indexPath)
     guard let containerCell = cell as? ContainerCellProtocol else {

@@ -12,20 +12,20 @@ struct FormattedSectionConstants {
   static let mainSourceSymbol: Character = "*"
 }
 
-public class FormattedSection {
-  public var format: String?
-  public var mainElements: [CellControllerProtocol]?
-  public var supportElemets = [Character: [CellControllerProtocol]]()
-  public var lastElement: CellControllerProtocol?
-  var numberOfItems: Int = 0
+open class FormattedSection {
+  open var format: String?
+  open var mainElements: [CellControllerProtocol]?
+  open var supportElemets = [Character: [CellControllerProtocol]]()
+  open var lastElement: CellControllerProtocol?
+  open var numberOfItems: Int = 0
   
   public init() {}
   
-  func recalculateNumberOfItems() {
+  open func recalculateNumberOfItems() {
     numberOfItems = calculateNumberOfItems()
   }
   
-  func calculateNumberOfItems() -> Int {
+  open func calculateNumberOfItems() -> Int {
     guard let format = format else { return mainElements?.count ?? 0 }
     let indexes = format.indexes(of: FormattedSectionConstants.mainSourceSymbol)
     let indexesCount = indexes.count
