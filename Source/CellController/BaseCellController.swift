@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class BaseCellController: CellControllerProtocol {
-  public var contentController: ContentControllerProtocol?
+open class BaseCellController: CellControllerProtocol {
+  open var contentController: ContentControllerProtocol?
   
   public init() {
   }
   
-  public func didSelect() {
+  open func didSelect() {
   }
 }

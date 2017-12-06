@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ContainerCellProtocol {
+public protocol ContainerCellProtocol {
   func configure(with view: UIView?)
 }

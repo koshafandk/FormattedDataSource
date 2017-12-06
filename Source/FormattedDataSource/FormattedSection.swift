@@ -12,11 +12,11 @@ struct FormattedSectionConstants {
   static let mainSourceSymbol: Character = "*"
 }
 
-public class FormattedSection {
-  public var format: String?
-  public var mainElements: [CellControllerProtocol]?
-  public var supportElemets = [Character: [CellControllerProtocol]]()
-  public var lastElement: CellControllerProtocol?
+open class FormattedSection {
+  open var format: String?
+  open var mainElements: [CellControllerProtocol]?
+  open var supportElemets = [Character: [CellControllerProtocol]]()
+  open var lastElement: CellControllerProtocol?
   var numberOfItems: Int = 0
   
   public init() {}
