@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'FormattedDataSource'
-  s.version          = '0.1.0'
-  s.summary          = 'Simple text formatting in Swift.'
+  s.version          = '0.1.1'
+  s.summary          = 'Data source with format.'
 
   s.description      = <<-DESC
 This framework provide to use multiple dataSource for collection of table view
