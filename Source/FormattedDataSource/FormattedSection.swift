@@ -17,15 +17,15 @@ open class FormattedSection {
   open var mainElements: [CellControllerProtocol]?
   open var supportElemets = [Character: [CellControllerProtocol]]()
   open var lastElement: CellControllerProtocol?
-  var numberOfItems: Int = 0
+  open var numberOfItems: Int = 0
   
   public init() {}
   
-  func recalculateNumberOfItems() {
+  open func recalculateNumberOfItems() {
     numberOfItems = calculateNumberOfItems()
   }
   
-  func calculateNumberOfItems() -> Int {
+  open func calculateNumberOfItems() -> Int {
     guard let format = format else { return mainElements?.count ?? 0 }
     let indexes = format.indexes(of: FormattedSectionConstants.mainSourceSymbol)
     let indexesCount = indexes.count
