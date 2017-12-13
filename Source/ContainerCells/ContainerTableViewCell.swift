@@ -12,6 +12,11 @@ import SnapKit
 open class ContainerTableViewCell: UITableViewCell, ContainerCellProtocol {
   static let identifier = "TableContainerCell"
   
+  open override func prepareForReuse() {
+    super.prepareForReuse()
+    contentView.subviews.first?.removeFromSuperview()
+  }
+  
   open func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)

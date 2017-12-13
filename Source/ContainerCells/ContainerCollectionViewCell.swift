@@ -12,6 +12,11 @@ import SnapKit
 open class ContainerCollectionViewCell: UICollectionViewCell, ContainerCellProtocol {
   static let identifier = "CollectionContainerCell"
   
+  open override func prepareForReuse() {
+    super.prepareForReuse()
+    contentView.subviews.first?.removeFromSuperview()
+  }
+  
   open func configure(with view: UIView?) {
     guard let view = view else { return }
     contentView.addSubview(view)
