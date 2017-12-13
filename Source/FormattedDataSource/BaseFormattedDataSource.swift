@@ -24,17 +24,19 @@ open class BaseFormattedDataSource: NSObject {
   }
   
   open func configureCell(_ section: FormattedSection,
-                     _ cell: ContainerCellProtocol,
-                     _ indexPath: IndexPath) {
-    guard let format = section.format else {
-      cell.configure(
-        with: section.mainElements?[indexPath.row].contentController?.view)
-      return
-    }
+                          _ cell: ContainerCellProtocol,
+                          _ indexPath: IndexPath) {
     if let lastElement = section.lastElement, indexPath.row == section.numberOfItems - 1 {
       cell.configure(with: lastElement.contentController?.view)
       return
     }
+    let cellController = getElement(for: indexPath)
+    cell.configure(with: cellController?.contentController?.view)
+  }
+  
+  open func getElement(for indexPath: IndexPath) -> CellControllerProtocol? {
+    let section = formattedSections[indexPath.section]
+    guard let format = section.format else { return section.mainElements?[indexPath.row] }
     let formatSymbol = format[format.index(format.startIndex, offsetBy: indexPath.row % format.count)]
     var elementsArray = getElementsArray(symbol: formatSymbol, section: section)
     
@@ -45,10 +47,10 @@ open class BaseFormattedDataSource: NSObject {
     if let symbolOffset = indexes.index(of: indexInFormat) {
       let index = indexes.count * multiplier + symbolOffset
       if let elementsCount = elementsArray?.count, index < elementsCount {
-        let contentView = elementsArray?[index].contentController?.view
-        cell.configure(with: contentView)
+        return elementsArray?[index]
       }
     }
+    return nil
   }
   
   func getElementsArray(symbol: Character, section: FormattedSection) -> [CellControllerProtocol]? {
@@ -59,3 +61,4 @@ open class BaseFormattedDataSource: NSObject {
     }
   }
 }
+
