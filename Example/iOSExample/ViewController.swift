@@ -45,14 +45,21 @@ class ViewController: UIViewController {
   }
   
   @objc func actionTapOnRemoveButton() {
-    dataSource.formattedSections[0].mainElements?.removeFirst()
+    dataSource.remove(at: [0], fromSection: 0)
     collectionView.reloadData()
   }
   
   @objc func actionTapOnAddButton() {
-    let controller = CellControllersFactory.labelCellControllerBlue(text: "text5")
-    dataSource.formattedSections[0].mainElements?.append(controller)
-    collectionView.reloadData()
+    let mainController = CellControllersFactory.labelCellControllerBlue(text: "inserted")
+    let supportController = CellControllersFactory.labelCellControllerRed(text: "inserted")
+    let supportController2 = CellControllersFactory.labelCellControllerBrown(text: "inserted")
+    let indexPaths = dataSource.insert(mainElements: [mainController],
+                                       supportElements: ["|": [supportController],
+                                                         "_": [supportController2]],
+                                       toSection: 0)
+    collectionView.performBatchUpdates({
+      collectionView.insertItems(at: indexPaths)
+    })
   }
 }
 
@@ -115,14 +122,15 @@ private extension ViewController {
       CellControllersFactory.labelCellControllerBlue(text: "text8"),
       CellControllersFactory.labelCellControllerBlue(text: "text9")]
     
-    formattedSection.format = "*|*|*_"
-    formattedSection.mainElements = mainBlueCells
-    formattedSection.supportElemets["|"] = redCells
-    formattedSection.supportElemets["_"] = browmCells
-    formattedSection.lastElement = CellControllersFactory.labelCellControllerGray(text: "text")
+    let grayCell = CellControllersFactory.labelCellControllerGray(text: "text")
     
+    formattedSection.format = "*|*|*_"
+    formattedSection.insert(mainElements: mainBlueCells,
+                            supportElements: ["|": redCells,
+                                              "_": browmCells])
+    formattedSection.setLastElement(grayCell)
     let formattedSection2 = FormattedSection()
-    formattedSection2.mainElements = mainBlueCells2
+    formattedSection2.insert(mainElements: mainBlueCells2)
     
     dataSource.formattedSections = [formattedSection, formattedSection2]
     

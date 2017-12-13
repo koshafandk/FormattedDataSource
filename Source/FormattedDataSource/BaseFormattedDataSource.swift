@@ -18,9 +18,7 @@ open class BaseFormattedDataSource: NSObject {
   }
   
   open func numberOfItemsInSection(_ section: Int) -> Int {
-    let formattedSection = formattedSections[section]
-    formattedSection.recalculateNumberOfItems()
-    return formattedSection.numberOfItems
+    return formattedSections[section].numberOfItems
   }
   
   open func configureCell(_ section: FormattedSection,
@@ -51,6 +49,24 @@ open class BaseFormattedDataSource: NSObject {
       }
     }
     return nil
+  }
+  
+  open func insert(mainElements: [CellControllerProtocol],
+                   supportElements: [Character: [CellControllerProtocol]],
+                   toSection section: Int) -> [IndexPath] {
+    let newIndexes = formattedSections[section].insert(mainElements: mainElements, supportElements:supportElements)
+    return newIndexes.flatMap { IndexPath(row: $0, section: section) }
+  }
+  
+  open func remove(at mainIndexes: [Int],
+                     supportIndexes: [Character: [Int]] = [:],
+                     fromSection section: Int) {
+    formattedSections[section].remove(at: mainIndexes, supportIndexes:supportIndexes)
+  }
+  
+  open func setLastElement(_ lastElement: CellControllerProtocol?,
+                           forSection section: Int) {
+    formattedSections[section].setLastElement(lastElement)
   }
   
   func getElementsArray(symbol: Character, section: FormattedSection) -> [CellControllerProtocol]? {
