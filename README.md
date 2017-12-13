@@ -49,7 +49,7 @@ $ pod install
 To integrate FormattedDataSource into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "luximetr/FormattedDataSource" ~> 0.1.1
+github "luximetr/FormattedDataSource" ~> 0.1.2
 ```
 
 Run `carthage update` to build the framework and drag the built `FormattedDataSource.framework` into your Xcode project.
