@@ -69,7 +69,7 @@ open class BaseFormattedDataSource: NSObject {
     formattedSections[section].setLastElement(lastElement)
   }
   
-  func getElementsArray(symbol: Character, section: FormattedSection) -> [CellControllerProtocol]? {
+  public func getElementsArray(symbol: Character, section: FormattedSection) -> [CellControllerProtocol]? {
     if symbol == FormattedSectionConstants.mainSourceSymbol {
       return section.mainElements
     } else {

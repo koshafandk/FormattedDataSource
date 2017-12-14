@@ -8,13 +8,13 @@
 
 import Foundation
 
-extension String {
-  func character(at position: Int) -> Character {
+public extension String {
+  public func character(at position: Int) -> Character {
     let charIndex = index(startIndex, offsetBy: position)
     return self[charIndex]
   }
   
-  func indexes(of char: Character) -> [Int] {
+  public func indexes(of char: Character) -> [Int] {
     var charIndexes = [Int]()
     for i in 0..<count {
       if character(at: i) == char {
